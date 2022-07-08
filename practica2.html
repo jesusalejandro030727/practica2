@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora fundamentos</title>
+    <body>
+    <center><h2><p style="color:#42ad2c";>Calculadora básica <br> Jesus Alejandro Benitez Perez </p></h2></center>
+    <form action="">
+        <table border="4" align="center">
+            <tr>
+                <td>
+                    Ingrese el número 1:
+                    <input type = "number" name = "art1" id = "art1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el número 2:
+                    <input type = "number" name = "art2" id = "art2">
+                </td>
+            </tr>
+            <tr>
+                
+                <td>
+                    <center>¿Que tipo de operacion realizaras?: </center>
+                    <br>
+                    1.Suma
+                    <br>
+                    2.Resta
+                    <br>
+                    3.Multiplicación
+                    <br>
+                    4.División
+                    <input type = "number" name = "art3" id = "art3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type = "button" value ="Calcular" onclick =Calcular();>
+                </td>
+            </tr>
+        </table>
+    </form>
+   
+    <script>
+        
+       /*TRABAJO echo[ Jesus Alejandro Benitez Perez ]*/
+        function calculo(e1,tv,e2) 
+        {
+            let resil = null;
+            switch(tv)
+            {
+                case 1: return resil = e1+e2;
+                case 2:return  resil = e1-e2;
+                case 3:return   resil = e1*e2;
+                case 4:return  resil = e1/e2;
+            }
+        }
+        function Calcular()
+        {
+            let a = parseInt(document.getElementById("art1").value);
+            let b = parseInt(document.getElementById("art2").value);
+            let c = parseInt(document.getElementById("art3").value);
+            let m =  calculo(a,c,b);
+            return  alert("El valor es: "+m);
+
+        
+        }
+      
+
+    </script>
+    <center><h3>Formula Cuadrática</h3></center>
+    <form action="">
+        <table border="2" align="center">
+            <tr>
+                <td>
+                    Ingrese el valor a:
+                    <input type = "number" name = "a1" id = "a1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el valor b:
+                    <input type = "number" name = "a2" id = "a2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el valor c:
+                    <input type = "number" name = "a3" id = "a3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type = "button" value ="Calcular" onclick ="Cuadratica_Cal();">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //
+    function Cuadratica_Cal() 
+    {
+        let a = parseInt(document.getElementById("a1").value);
+        let b = parseInt(document.getElementById("a2").value);
+        let c = parseInt(document.getElementById("a3").value);
+        let parte1 = (-1)*b;
+        let parte2 = Math.pow(b,2)-(4*a*c);
+        let parte3 = 2*a;
+        if (parte2 > 0) {
+            let x1 = (parte1 - Math.sqrt(parte2))/parte3;
+            let x2 = (parte1 + Math.sqrt(parte2))/parte3;
+            alert("Los  valores de x son: "+ parseFloat(x1) + " y " +parseFloat(x2));
+        } else {
+            let x3 = parte1/parte3;
+            alert("El valor de x es: "+ parseFloat(x3));
+        }
+    }
+    </script>
+
+
+    
+</body>
+</html> 
